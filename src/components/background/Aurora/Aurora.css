@@ -1,0 +1,233 @@
+.aurora-wrapper{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-9;
+
+}
+
+.aurora{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.42;
+
+    mix-blend-mode:screen;
+
+}
+
+/* Purple */
+
+.aurora-1{
+
+    width:850px;
+
+    height:850px;
+
+    background:#7C3AED;
+
+    top:-280px;
+
+    left:-220px;
+
+    animation:auroraOne 22s ease-in-out infinite alternate;
+
+}
+
+/* Blue */
+
+.aurora-2{
+
+    width:750px;
+
+    height:750px;
+
+    background:#3B82F6;
+
+    right:-220px;
+
+    bottom:-180px;
+
+    animation:auroraTwo 20s ease-in-out infinite alternate;
+
+}
+
+/* Pink */
+
+.aurora-3{
+
+    width:520px;
+
+    height:520px;
+
+    background:#EC4899;
+
+    top:12%;
+
+    left:45%;
+
+    animation:auroraThree 18s ease-in-out infinite alternate;
+
+}
+
+/* Cyan */
+
+.aurora-4{
+
+    width:420px;
+
+    height:420px;
+
+    background:#60A5FA;
+
+    top:65%;
+
+    left:8%;
+
+    animation:auroraFour 15s ease-in-out infinite alternate;
+
+}
+
+/* White Glow */
+
+.aurora-5{
+
+    width:650px;
+
+    height:650px;
+
+    background:rgba(255,255,255,.95);
+
+    top:-120px;
+
+    right:15%;
+
+    opacity:.30;
+
+    animation:auroraFive 25s ease-in-out infinite alternate;
+
+}
+
+/* Lavender */
+
+.aurora-6{
+
+    width:550px;
+
+    height:550px;
+
+    background:#C4B5FD;
+
+    bottom:-150px;
+
+    left:30%;
+
+    animation:auroraSix 17s ease-in-out infinite alternate;
+
+}
+
+@keyframes auroraOne{
+
+    from{
+
+        transform:translate(0,0) rotate(0deg);
+
+    }
+
+    to{
+
+        transform:translate(120px,80px) rotate(18deg);
+
+    }
+
+}
+
+@keyframes auroraTwo{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-100px,-120px);
+
+    }
+
+}
+
+@keyframes auroraThree{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.25) translateY(-80px);
+
+    }
+
+}
+
+@keyframes auroraFour{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(150px);
+
+    }
+
+}
+
+@keyframes auroraFive{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(100px);
+
+    }
+
+}
+
+@keyframes auroraSix{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-60px);
+
+    }
+
+}

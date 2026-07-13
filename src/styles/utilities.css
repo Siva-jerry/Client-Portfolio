@@ -1,0 +1,27 @@
+.container{
+
+    width:min(1280px,92%);
+
+    margin:auto;
+
+}
+
+.glass{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(var(--blur));
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-soft);
+
+}
+
+.section{
+
+    padding:120px 0;
+
+}

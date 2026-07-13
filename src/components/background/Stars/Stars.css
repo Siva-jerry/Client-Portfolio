@@ -1,0 +1,59 @@
+.stars-wrapper{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-8;
+
+}
+
+.star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+        0 0 8px rgba(255,255,255,.9),
+
+        0 0 16px rgba(124,58,237,.25);
+
+    animation:twinkle infinite ease-in-out;
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        transform:scale(.4);
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        transform:scale(1.6);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.4);
+
+        opacity:.2;
+
+    }
+
+}

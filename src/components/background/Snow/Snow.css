@@ -1,0 +1,87 @@
+.snow-wrapper{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-7;
+
+}
+
+.snow{
+
+    position:absolute;
+
+    top:-20px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.95);
+
+    box-shadow:
+
+        0 0 8px rgba(255,255,255,.9),
+
+        0 0 18px rgba(124,58,237,.2);
+
+    animation:snowFall linear infinite;
+
+}
+
+@keyframes snowFall{
+
+    0%{
+
+        transform:
+
+            translateY(-30px)
+
+            translateX(0);
+
+    }
+
+    25%{
+
+        transform:
+
+            translateY(25vh)
+
+            translateX(-18px);
+
+    }
+
+    50%{
+
+        transform:
+
+            translateY(50vh)
+
+            translateX(15px);
+
+    }
+
+    75%{
+
+        transform:
+
+            translateY(75vh)
+
+            translateX(-12px);
+
+    }
+
+    100%{
+
+        transform:
+
+            translateY(110vh)
+
+            translateX(20px);
+
+    }
+
+}

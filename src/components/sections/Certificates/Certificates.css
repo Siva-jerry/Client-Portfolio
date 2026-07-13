@@ -1,0 +1,792 @@
+/*==================================================
+CERTIFICATE SECTION
+==================================================*/
+
+.certificate-section{
+    position:relative;
+    width:100%;
+    padding:140px 0 100px;
+    overflow:hidden;
+}
+
+/*==================================================
+MAIN CONTAINER
+==================================================*/
+
+.certificate-container{
+    width:min(1320px,92%);
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+}
+
+/*==================================================
+DIRECT CHILD SPACING
+==================================================*/
+
+.certificate-container > *{
+    position:relative;
+    z-index:2;
+}
+
+/*==================================================
+BACKGROUND GLOW
+==================================================*/
+
+.certificate-section::before{
+    content:"";
+    position:absolute;
+    width:520px;
+    height:520px;
+    top:-180px;
+    left:-180px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(124,58,237,.14),
+        transparent 70%
+    );
+    pointer-events:none;
+    z-index:0;
+}
+
+.certificate-section::after{
+    content:"";
+    position:absolute;
+    width:460px;
+    height:460px;
+    right:-140px;
+    bottom:-160px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(59,130,246,.14),
+        transparent 70%
+    );
+    pointer-events:none;
+    z-index:0;
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media (max-width:992px){
+
+    .certificate-section{
+        padding:120px 0;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .certificate-section{
+        padding:100px 0;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .certificate-section{
+        padding:90px 0;
+    }
+
+}
+/*==================================================
+CERTIFICATE HEADING
+==================================================*/
+
+.certificate-heading{
+    max-width:760px;
+    margin:0 auto 80px;
+    text-align:center;
+}
+
+.certificate-badge{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.55);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    color:#7C3AED;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    box-shadow:
+    0 15px 35px rgba(124,58,237,.12);
+
+}
+
+.certificate-title{
+
+    margin-top:28px;
+
+    font-size:clamp(46px,6vw,72px);
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    color:#181818;
+
+}
+
+.certificate-title span{
+
+    background:linear-gradient(
+        135deg,
+        #7C3AED,
+        #8B5CF6,
+        #EC4899,
+        #3B82F6
+    );
+
+    background-size:300%;
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:heroGradient 8s linear infinite;
+
+}
+
+.certificate-description{
+
+    max-width:700px;
+
+    margin:24px auto 0;
+
+    color:#555;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+    .certificate-heading{
+
+        margin-bottom:60px;
+
+    }
+
+    .certificate-title{
+
+        font-size:2.6rem;
+
+    }
+
+    .certificate-description{
+
+        font-size:16px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .certificate-badge{
+
+        font-size:.82rem;
+
+        padding:12px 22px;
+
+    }
+
+    .certificate-title{
+
+        font-size:2.1rem;
+
+    }
+
+}
+/*==================================================
+CERTIFICATE GRID
+==================================================*/
+
+.certificate-grid{
+
+    display:grid;
+
+    /* Fixed single card layout stretching issue by capping column expansion */
+    grid-template-columns:repeat(auto-fit,minmax(320px,400px));
+
+    gap:32px;
+
+    align-items:stretch;
+
+    /* Center-aligns cards when they don't fill the full container width */
+    justify-content:center;
+
+}
+
+/*==================================================
+EMPTY STATE
+==================================================*/
+
+.certificate-empty{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
+
+    padding:90px 30px;
+
+    border-radius:34px;
+
+    background:rgba(255,255,255,.45);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    backdrop-filter:blur(28px);
+
+    -webkit-backdrop-filter:blur(28px);
+
+    box-shadow:
+        0 25px 70px rgba(124,58,237,.10);
+
+    text-align:center;
+
+}
+
+.certificate-empty h3{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#181818;
+
+}
+
+.certificate-empty p{
+
+    max-width:450px;
+
+    color:#555;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+    .certificate-grid{
+
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .certificate-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .certificate-empty{
+
+        padding:70px 25px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .certificate-empty{
+
+        border-radius:24px;
+
+        padding:60px 20px;
+
+    }
+
+    .certificate-empty h3{
+
+        font-size:1.7rem;
+
+    }
+
+}
+/*==================================================
+CERTIFICATE CARD
+==================================================*/
+
+.certificate-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+    padding:28px;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.45);
+
+    border:1px solid rgba(255,255,255,.75);
+
+    backdrop-filter:blur(28px);
+
+    -webkit-backdrop-filter:blur(28px);
+
+    box-shadow:
+        0 25px 70px rgba(124,58,237,.10),
+        inset 0 1px 1px rgba(255,255,255,.95);
+
+    transition:.4s cubic-bezier(.165,.84,.44,1);
+
+}
+
+.certificate-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(124,58,237,.35);
+
+    box-shadow:
+        0 35px 80px rgba(124,58,237,.20);
+
+}
+
+.certificate-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        135deg,
+
+        rgba(124,58,237,.08),
+
+        rgba(59,130,246,.08),
+
+        transparent
+
+    );
+
+    opacity:0;
+
+    transition:.4s;
+
+    pointer-events:none;
+
+}
+
+.certificate-card:hover::before{
+
+    opacity:1;
+
+}
+
+.certificate-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:5px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #7C3AED,
+
+        #EC4899,
+
+        #3B82F6
+
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s;
+
+}
+
+.certificate-card:hover::after{
+
+    transform:scaleX(1);
+
+}
+
+/*==================================================
+FEATURED BADGE
+==================================================*/
+
+.certificate-featured{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #7C3AED,
+
+        #8B5CF6,
+
+        #3B82F6
+
+    );
+
+    color:#ffffff;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    z-index:5;
+
+    box-shadow:
+        0 12px 30px rgba(124,58,237,.25);
+
+}
+
+/*==================================================
+IMAGE WRAPPER (FIXED CONTAINER)
+==================================================*/
+
+.certificate-image-wrapper{
+
+    width:100%;
+
+    height:230px; /* Rigid, predictable container height */
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    margin-bottom:28px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    /* A slight background contrast to display off-aspect-ratio image edges elegantly */
+    background:rgba(255,255,255,.65);
+
+    border:1px solid rgba(255,255,255,.70);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+}
+
+.certificate-card:hover .certificate-image-wrapper{
+
+    transform:scale(1.02);
+
+    border-color:rgba(124,58,237,.35);
+
+}
+
+/*==================================================
+IMAGE
+==================================================*/
+
+.certificate-image{
+
+    width:100%;
+
+    height:100%;
+
+    max-width:100%;
+
+    max-height:100%;
+
+    /* Guarantees full view of the certificate image without stretching or cropping */
+    object-fit:contain;
+
+    object-position:center;
+
+    display:block;
+
+    margin:auto;
+
+    transition:.4s;
+
+}
+
+.certificate-card:hover .certificate-image{
+
+    transform:scale(1.05);
+
+}
+
+/*==================================================
+CONTENT
+==================================================*/
+
+.certificate-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+.certificate-card-title{
+
+    font-size:1.55rem;
+
+    font-weight:800;
+
+    color:#181818;
+
+    line-height:1.3;
+
+}
+
+.certificate-organization{
+
+    margin-top:10px;
+
+    color:#7C3AED;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+}
+
+/*==================================================
+META
+==================================================*/
+
+.certificate-meta{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin:26px 0;
+
+}
+
+.certificate-meta-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#555;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+}
+
+.certificate-meta-item svg{
+
+    color:#7C3AED;
+
+    font-size:18px;
+
+}
+
+/*==================================================
+BUTTON
+==================================================*/
+
+.certificate-button{
+
+    margin-top:auto;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #7C3AED,
+
+        #8B5CF6,
+
+        #3B82F6
+
+    );
+
+    box-shadow:
+        0 18px 40px rgba(124,58,237,.22);
+
+    transition:.35s;
+
+}
+
+.certificate-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 28px 55px rgba(124,58,237,.32);
+
+}
+
+.certificate-button svg{
+
+    transition:.35s;
+
+}
+
+.certificate-button:hover svg{
+
+    transform:translateX(4px);
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+    .certificate-card{
+
+        padding:24px;
+
+    }
+
+    .certificate-image-wrapper{
+
+        height:200px;
+
+    }
+
+    .certificate-card-title{
+
+        font-size:1.35rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .certificate-card{
+
+        border-radius:24px;
+
+    }
+
+    .certificate-image-wrapper{
+
+        height:180px;
+
+        padding:16px;
+
+    }
+
+}

@@ -1,0 +1,32 @@
+.background-wrapper{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-100;
+
+    background:
+
+        radial-gradient(circle at 20% 15%,
+            rgba(124,58,237,.10),
+            transparent 35%),
+
+        radial-gradient(circle at 80% 10%,
+            rgba(59,130,246,.10),
+            transparent 35%),
+
+        radial-gradient(circle at 50% 50%,
+            rgba(236,72,153,.05),
+            transparent 45%),
+
+        linear-gradient(
+            180deg,
+            #FCFDFF 0%,
+            #F8FAFF 40%,
+            #F5F8FF 100%
+        );
+
+}

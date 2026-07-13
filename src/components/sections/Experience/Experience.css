@@ -1,0 +1,476 @@
+/*==================================================
+EXPERIENCE SECTION
+==================================================*/
+
+.experience-section{
+    position:relative;
+    width:100%;
+    padding:140px 0 100px;
+    overflow:hidden;
+}
+
+.experience-container{
+    width:min(1320px,92%);
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+/*==================================================
+SECTION SPACING
+==================================================*/
+
+.experience-container>*{
+    position:relative;
+    z-index:2;
+}
+
+/*==================================================
+EXPERIENCE HEADING
+==================================================*/
+
+.experience-heading{
+    max-width:760px;
+    margin:0 auto 70px;
+    text-align:center;
+    animation:heroFadeUp .8s ease forwards;
+}
+
+.experience-subtitle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 26px;
+    border-radius:999px;
+    background:rgba(255,255,255,.55);
+    border:1px solid rgba(255,255,255,.7);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    color:#7C3AED;
+    font-size:.95rem;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:24px;
+    box-shadow:0 10px 40px rgba(124,58,237,.15);
+}
+
+.experience-title{
+    font-size:clamp(46px,6vw,72px);
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:22px;
+    color:#161616;
+}
+
+.experience-title span{
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #8b5cf6,
+        #ec4899,
+        #3b82f6
+    );
+    background-size:300%;
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+    animation:heroGradient 8s linear infinite;
+}
+
+.experience-description{
+    max-width:700px;
+    margin:auto;
+    color:#060606;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/*==================================================
+FILTER
+==================================================*/
+
+.experience-filter{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    margin:70px 0 60px;
+}
+
+.experience-filter-btn{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:14px 28px;
+    border-radius:999px;
+    background:rgba(255,255,255,.45);
+    border:1px solid rgba(255,255,255,.75);
+    backdrop-filter:blur(28px);
+    -webkit-backdrop-filter:blur(28px);
+    color:#555;
+    font-size:.95rem;
+    font-weight:600;
+    transition:.35s ease;
+    box-shadow:0 15px 40px rgba(124,58,237,.04);
+}
+
+.experience-filter-btn:hover{
+    transform:translateY(-4px);
+    border-color:#7C3AED;
+    color:#7C3AED;
+}
+
+.experience-filter-btn.active{
+    color:#ffffff;
+    border:none;
+    background:linear-gradient(
+        135deg,
+        #7C3AED,
+        #8B5CF6,
+        #3B82F6
+    );
+    box-shadow:0 14px 35px rgba(124,58,237,.28);
+}
+
+/*==================================================
+EXPERIENCE TIMELINE
+==================================================*/
+
+.experience-timeline{
+    position:relative;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:42px;
+    margin-top:30px;
+}
+
+.experience-line{
+    position:absolute;
+    left:50%;
+    top:50;
+    bottom:50;
+    width:4px;
+    transform:translateX(-50%);
+    border-radius:999px;
+    background:linear-gradient(
+        to bottom,
+        #7C3AED,
+        #8B5CF6,
+        #3B82F6
+    );
+    opacity:.35;
+}
+
+/*==================================================
+EXPERIENCE CARD
+==================================================*/
+
+.experience-card{
+    position:relative;
+    display:grid;
+    grid-template-columns:140px minmax(0,1fr);
+    gap:32px;
+    align-items:center;
+    padding:40px;
+    border-radius:34px;
+    background:rgba(255,255,255,.45);
+    border:1px solid rgba(255,255,255,.75);
+    backdrop-filter:blur(28px);
+    -webkit-backdrop-filter:blur(28px);
+    box-shadow:0 25px 70px rgba(124,58,237,.10), inset 0 1px 1px rgba(255,255,255,.95);
+    transition:.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow:hidden;
+}
+
+.experience-card:hover{
+    transform:translateY(-6px)scale(1.01);
+    background:rgba(255,255,255,.55);
+    border-color:rgba(124,58,237,.35);
+    box-shadow:0 35px 80px rgba(124,58,237,.20);
+}
+
+.experience-card::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:5px;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.35s ease;
+    background:linear-gradient(90deg, #7C3AED, #EC4899, #3B82F6);
+}
+
+.experience-card:hover::after{
+    transform:scaleX(1);
+}
+
+.experience-card-dot{
+    position:absolute;
+    width:22px;
+    height:22px;
+    left:calc(50% - 11px);
+    top:55px;
+    border-radius:50%;
+    background:#7C3AED;
+    border:5px solid #ffffff;
+    box-shadow:0 0 25px rgba(124,58,237,.6);
+    z-index:5;
+}
+
+/* LOGO BOX (Admin Guard Enabled 🛠️) */
+.experience-card-logo{
+    width:110px;
+    height:110px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    border-radius:24px;
+    background:rgba(255,255,255,.34);
+    backdrop-filter:blur(24px);
+    border:1px solid rgba(255,255,255,.65);
+    box-shadow:inset 0 1px 1px rgba(255,255,255,.9);
+    overflow:hidden; /* Prevents raw unformatted image spills */
+    transition:.35s ease;
+}
+
+.experience-card:hover .experience-card-logo{
+    transform:scale(1.03);
+    border-color:rgba(124,58,237,.3);
+}
+
+.experience-company-image{
+    width:100%;
+    height:100%;
+    display: block;
+    margin: auto;
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain; /* Scales any upload neatly within bounds */
+    padding:14px;
+    transition:.35s ease;
+}
+
+.experience-card:hover .experience-company-image{
+    transform:scale(1.05);
+}
+
+.experience-card-content{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    text-align:left;
+}
+
+.experience-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+.experience-company{
+    color:#6d28d9;
+    font-size:.95rem;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.experience-role{
+    font-size:2.2rem;
+    font-weight:800;
+    color:#161616;
+    margin-top:6px;
+}
+
+.experience-type{
+    padding:10px 20px;
+    border-radius:999px;
+    background:linear-gradient(
+        135deg,
+        #7C3AED,
+        #8B5CF6,
+        #3B82F6
+    );
+    color:#ffffff;
+    font-size:.85rem;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(124,58,237,.2);
+}
+
+.experience-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    color:#555;
+    font-weight:600;
+    font-size:15px;
+}
+
+.experience-meta span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.experience-meta svg{
+    color:#7C3AED;
+}
+
+.experience-summary{
+    color:#060606;
+    line-height:1.9;
+    word-break:break-word;
+    font-size:16px;
+}
+
+/*==================================================
+TECHNOLOGIES CHIPS
+==================================================*/
+
+.experience-technologies{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.experience-chip{
+    padding:9px 18px;
+    border-radius:999px;
+    background:rgba(255,255,255,.55);
+    border:1px solid rgba(255,255,255,.8);
+    backdrop-filter:blur(10px);
+    color:#555;
+    font-weight:600;
+    font-size:14px;
+    transition:.35s ease;
+    box-shadow:0 5px 15px rgba(124,58,237,.04);
+}
+
+
+
+.experience-chip:hover{
+    transform: translateY(-6px)scale(1.05);
+    background:linear-gradient(135deg, #7C3AED, #3B82F6);
+    color:#ffffff !important;
+    border-color:transparent;
+    box-shadow:0 8px 20px rgba(124,58,237,.2);
+}
+
+/*==================================================
+EMPTY STATE
+==================================================*/
+
+.experience-empty{
+    width:100%;
+    padding:90px 30px;
+    text-align:center;
+    border-radius:34px;
+    background:rgba(255,255,255,.45);
+    border:1px solid rgba(255,255,255,.75);
+    backdrop-filter:blur(28px);
+    box-shadow:0 25px 70px rgba(124,58,237,.10);
+}
+
+.experience-empty h3{
+    font-size:2.2rem;
+    font-weight:800;
+    margin-bottom:14px;
+    color:#181818;
+}
+
+.experience-empty p{
+    color:#555;
+    font-weight:500;
+    line-height:1.8;
+}
+
+/*==================================================
+RESPONSIVE DISPATCHES
+==================================================*/
+
+@media(max-width:992px){
+    .experience-section{
+        padding:120px 0;
+    }
+    .experience-line{
+        left:24px;
+        transform:none;
+    }
+    .experience-card{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:34px;
+    }
+    .experience-card-dot{
+        display:none;
+    }
+    .experience-card-content{
+        text-align:center;
+    }
+    .experience-card-header{
+        flex-direction:column;
+        align-items:center;
+
+        gap:14px;
+    }
+    .experience-meta{
+        justify-content:center;
+    }
+    .experience-technologies{
+        justify-content:center;
+    }
+}
+
+@media(max-width:768px){
+    .experience-section{
+        padding:100px 0;
+    }
+    .experience-heading{
+        margin-bottom:50px;
+    }
+    .experience-title{
+        font-size:2.5rem;
+    }
+    .experience-description{
+        font-size:16px;
+    }
+    .experience-filter{
+        gap:12px;
+        margin:45px 0;
+    }
+    .experience-filter-btn{
+        flex:1;
+        min-width:120px;
+        padding:12px 18px;
+        font-size:.9rem;
+    }
+    .experience-timeline{
+        gap:28px;
+    }
+}
+
+@media(max-width:480px){
+    .experience-card{
+        padding:24px;
+        border-radius:24px;
+    }
+    .experience-role{
+        font-size:1.65rem;
+    }
+    .experience-filter{
+        flex-direction:column;
+    }
+    .experience-filter-btn{
+        width:100%;
+    }
+}

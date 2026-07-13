@@ -1,0 +1,131 @@
+.mist{
+
+    position:fixed;
+
+    left:0;
+
+    right:0;
+
+    bottom:-120px;
+
+    height:420px;
+
+    pointer-events:none;
+
+    z-index:-4;
+
+    background:
+
+        radial-gradient(
+
+            ellipse at center,
+
+            rgba(255,255,255,.95) 0%,
+
+            rgba(255,255,255,.75) 35%,
+
+            rgba(255,255,255,.35) 60%,
+
+            transparent 100%
+
+        );
+
+    filter:blur(70px);
+
+}
+
+.ambient-glow{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.18;
+
+    pointer-events:none;
+
+    animation:glowFloat 20s ease-in-out infinite;
+
+}
+
+.glow-one{
+
+    width:320px;
+
+    height:320px;
+
+    background:#7C3AED;
+
+    bottom:10%;
+
+    left:12%;
+
+}
+
+.glow-two{
+
+    width:280px;
+
+    height:280px;
+
+    background:#3B82F6;
+
+    bottom:18%;
+
+    right:10%;
+
+    animation-duration:24s;
+
+}
+
+.glow-three{
+
+    width:240px;
+
+    height:240px;
+
+    background:#EC4899;
+
+    bottom:32%;
+
+    left:48%;
+
+    animation-duration:18s;
+
+}
+
+@keyframes glowFloat{
+
+    0%{
+
+        transform:
+
+            translateY(0)
+
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+
+            translateY(-35px)
+
+            scale(1.08);
+
+    }
+
+    100%{
+
+        transform:
+
+            translateY(0)
+
+            scale(1);
+
+    }
+
+}

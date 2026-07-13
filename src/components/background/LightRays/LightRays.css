@@ -1,0 +1,175 @@
+.light-rays{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-5;
+
+}
+
+.ray{
+
+    position:absolute;
+
+    width:900px;
+
+    height:220px;
+
+    filter:blur(90px);
+
+    opacity:.16;
+
+    border-radius:999px;
+
+    transform:rotate(-30deg);
+
+    animation:rayMove 24s ease-in-out infinite alternate;
+
+}
+
+/* Purple */
+
+.ray-1{
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #7C3AED,
+
+        transparent
+
+    );
+
+    top:-80px;
+
+    left:-250px;
+
+}
+
+/* Blue */
+
+.ray-2{
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #3B82F6,
+
+        transparent
+
+    );
+
+    top:15%;
+
+    right:-280px;
+
+    animation-duration:28s;
+
+}
+
+/* Pink */
+
+.ray-3{
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #EC4899,
+
+        transparent
+
+    );
+
+    bottom:15%;
+
+    left:-220px;
+
+    animation-duration:30s;
+
+}
+
+/* Cyan */
+
+.ray-4{
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #60A5FA,
+
+        transparent
+
+    );
+
+    bottom:-120px;
+
+    right:-260px;
+
+    animation-duration:22s;
+
+}
+
+/* Lavender */
+
+.ray-5{
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        #C4B5FD,
+
+        transparent
+
+    );
+
+    top:42%;
+
+    left:18%;
+
+    animation-duration:26s;
+
+}
+
+@keyframes rayMove{
+
+    from{
+
+        transform:
+
+            rotate(-30deg)
+
+            translateX(0);
+
+    }
+
+    to{
+
+        transform:
+
+            rotate(-20deg)
+
+            translateX(120px);
+
+    }
+
+}

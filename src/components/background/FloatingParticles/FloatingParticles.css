@@ -1,0 +1,79 @@
+.particle{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:0 0 20px white;
+
+    animation:particleMove 14s linear infinite;
+
+    z-index:-3;
+
+}
+
+.p1{
+
+    top:20%;
+
+    left:10%;
+
+}
+
+.p2{
+
+    top:40%;
+
+    right:20%;
+
+}
+
+.p3{
+
+    bottom:20%;
+
+    left:25%;
+
+}
+
+.p4{
+
+    bottom:35%;
+
+    right:35%;
+
+}
+
+.p5{
+
+    top:70%;
+
+    left:70%;
+
+}
+
+@keyframes particleMove{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:.3;
+
+    }
+
+    to{
+
+        transform:translateY(-80px);
+
+        opacity:1;
+
+    }
+
+}
