@@ -26,22 +26,41 @@ export default function HeroButtons() {
 
     }
 
-    function handleDownload() {
+   function handleDownload() {
 
-        if (!hero.resumeUrl) {
+    if (!hero.resumeUrl) {
 
-            alert("Resume will be uploaded soon.");
-
-            return;
-
-        }
-
-        window.open(
-            hero.resumeUrl,
-            "_blank"
+        alert(
+            "Resume will be uploaded soon."
         );
 
+        return;
+
     }
+
+    const link =
+        document.createElement("a");
+
+    link.href =
+        hero.resumeUrl;
+
+    link.target =
+        "_blank";
+
+    link.download =
+        "Resume.pdf";
+
+    document.body.appendChild(
+        link
+    );
+
+    link.click();
+
+    document.body.removeChild(
+        link
+    );
+
+}
 
     return (
 
