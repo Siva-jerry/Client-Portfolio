@@ -15,7 +15,7 @@ export default function Navbar(){
                     className="navbar-logo"
                 >
 
-                    <span>Nimalda P</span>
+                    <span>Nimalda </span>
 
                 </a>
 

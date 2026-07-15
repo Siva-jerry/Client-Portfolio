@@ -16,7 +16,7 @@ function ContactInfo({ contact }) {
     icon: <FiMail />,
     label: "Email",
     value: contact.email,
-    link: `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}&su=Portfolio%20Enquiry&body=Hi%20Subiksha,%0A%0AI%20visited%20your%20portfolio.`,
+    link: `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}&su=Portfolio%20Enquiry&body=Hi%20Nimalda,%0A%0AI%20visited%20your%20portfolio.`,
 },
 
         {

@@ -35,7 +35,7 @@ function FooterBottom({ footer }) {
 
                             footer?.copyright ||
 
-                            `© ${currentYear} Subiksha S. All Rights Reserved.`
+                            `© ${currentYear} Nimalda P. All Rights Reserved.`
 
                         }
 
