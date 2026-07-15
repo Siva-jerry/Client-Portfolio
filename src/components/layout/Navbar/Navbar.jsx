@@ -15,7 +15,7 @@ export default function Navbar(){
                     className="navbar-logo"
                 >
 
-                    <span>Subiksha</span>
+                    <span>Nimalda P</span>
 
                 </a>
 
