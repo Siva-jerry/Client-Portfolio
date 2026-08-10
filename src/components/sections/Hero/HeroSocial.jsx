@@ -10,13 +10,13 @@ const socialLinks = [
     id: 1,
     icon: <FiGithub />,
     label: "GitHub",
-    url: "https://github.com/Subiksja",
+    url: "https://github.com/nimalp511",
   },
   {
     id: 2,
     icon: <FiLinkedin />,
     label: "LinkedIn",
-    url: "https://www.linkedin.com/in/subiksha1712/",
+    url: "https://www.linkedin.com/in/nimaldap-it",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const socialLinks = [
     id: 4,
     icon: <FiMail />,
     label: "Email",
-    url: "mailto:sksha7810@gmail.com",
+    url: "mailto:nimalp512005@gmail.com",
   },
 ];
 
