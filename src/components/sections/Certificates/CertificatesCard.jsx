@@ -7,136 +7,65 @@ import {
 
 import { getSupabaseImageUrl } from "../../../supabase/supabase";
 
-export default function CertificatesCard({ certificate }) {
-
+export default function CertificatesCard({ certificate, onSelect }) {
     const imageUrl = certificate.image
         ? getSupabaseImageUrl(certificate.image)
         : "";
 
     return (
-
         <article
             className="certificate-card"
+            onClick={() => onSelect({ ...certificate, imageUrl })}
         >
+            {certificate.featured && (
+                <span className="certificate-featured">
+                    <FiAward />
+                    Featured
+                </span>
+            )}
 
-            {
-
-                certificate.featured && (
-
-                    <span
-                        className="certificate-featured"
-                    >
-
-                        <FiAward />
-
-                        Featured
-
-                    </span>
-
-                )
-
-            }
-
-            <div
-                className="certificate-image-wrapper"
-            >
-
+            <div className="certificate-image-wrapper">
                 <img
-
                     src={imageUrl}
-
                     alt={certificate.title}
-
                     className="certificate-image"
-
                 />
-
             </div>
 
-            <div
-                className="certificate-content"
-            >
-
-                <h3
-                    className="certificate-card-title"
-                >
-
+            <div className="certificate-content">
+                <h3 className="certificate-card-title">
                     {certificate.title}
-
                 </h3>
 
-                <p
-                    className="certificate-organization"
-                >
-
+                <p className="certificate-organization">
                     {certificate.organization}
-
                 </p>
 
-                <div
-                    className="certificate-meta"
-                >
-
-                    <div
-                        className="certificate-meta-item"
-                    >
-
+                <div className="certificate-meta">
+                    <div className="certificate-meta-item">
                         <FiCalendar />
-
-                        <span>
-
-                            {certificate.issueDate}
-
-                        </span>
-
+                        <span>{certificate.issueDate}</span>
                     </div>
 
-                    <div
-                        className="certificate-meta-item"
-                    >
-
+                    <div className="certificate-meta-item">
                         <FiHash />
-
-                        <span>
-
-                            {certificate.credentialId}
-
-                        </span>
-
+                        <span>{certificate.credentialId}</span>
                     </div>
-
                 </div>
 
-                {
-
-                    certificate.verifyLink && (
-
-                        <a
-
-                            href={certificate.verifyLink}
-
-                            target="_blank"
-
-                            rel="noopener noreferrer"
-
-                            className="certificate-button"
-
-                        >
-
-                            Verify Certificate
-
-                            <FiExternalLink />
-
-                        </a>
-
-                    )
-
-                }
-
+                {certificate.verifyLink && (
+                    <a
+                        href={certificate.verifyLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="certificate-button"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        Verify Certificate
+                        <FiExternalLink />
+                    </a>
+                )}
             </div>
-
         </article>
-
     );
-
 }
