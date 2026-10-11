@@ -7,26 +7,28 @@
 
 html{
     scroll-behavior:smooth;
-    width:100%;
-    max-width:100%;
     overflow-x:hidden;
+    -webkit-text-size-adjust:100%;
 }
 
 body{
     background:var(--background);
     color:var(--text);
     width:100%;
-    max-width:100%;
+    margin:0;
+    padding:0;
     overflow-x:hidden;
     position:relative;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
 }
 
 #root{
     width:100%;
-    max-width:100%;
     overflow-x:hidden;
+    position:relative;
 }
 
 img{
@@ -58,11 +60,6 @@ MOBILE RESPONSIVE SYSTEM GUARDS
     box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-}
 
 img, svg, video, canvas, audio, iframe, embed, object {
     max-width: 100%;

@@ -10,7 +10,18 @@
 
     pointer-events:none;
 
+    contain:strict;
+
+    -webkit-transform:translate3d(0, 0, 0);
+
+    transform:translate3d(0, 0, 0);
+
+    -webkit-backface-visibility:hidden;
+
+    backface-visibility:hidden;
+
     background:
+
 
         radial-gradient(circle at 20% 15%,
             rgba(124,58,237,.10),

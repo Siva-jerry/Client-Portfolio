@@ -10,6 +10,16 @@
 
     z-index:-5;
 
+    contain:strict;
+
+    -webkit-transform:translate3d(0, 0, 0);
+
+    transform:translate3d(0, 0, 0);
+
+    -webkit-backface-visibility:hidden;
+
+    backface-visibility:hidden;
+
 }
 
 .ray{
@@ -26,11 +36,40 @@
 
     border-radius:999px;
 
-    transform:rotate(-30deg);
+    transform:rotate(-30deg) translate3d(0, 0, 0);
+
+    -webkit-transform:rotate(-30deg) translate3d(0, 0, 0);
+
+    -webkit-backface-visibility:hidden;
+
+    backface-visibility:hidden;
 
     animation:rayMove 24s ease-in-out infinite alternate;
 
 }
+
+@media(max-width:768px){
+
+    .ray{
+
+        width:380px !important;
+
+        height:100px !important;
+
+        filter:blur(35px) !important;
+
+        opacity:.12 !important;
+
+    }
+
+    .ray-3, .ray-4, .ray-5{
+
+        display:none !important;
+
+    }
+
+}
+
 
 /* Purple */
 

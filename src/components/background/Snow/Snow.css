@@ -1,87 +1,55 @@
 .snow-wrapper{
-
     position:fixed;
-
     inset:0;
-
     overflow:hidden;
-
     pointer-events:none;
-
     z-index:-7;
-
+    contain:strict;
+    -webkit-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
 }
 
 .snow{
-
     position:absolute;
-
     top:-20px;
-
     border-radius:50%;
-
     background:rgba(255,255,255,.95);
-
     box-shadow:
-
         0 0 8px rgba(255,255,255,.9),
-
         0 0 18px rgba(124,58,237,.2);
-
     animation:snowFall linear infinite;
-
+    -webkit-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
 }
 
 @keyframes snowFall{
-
     0%{
-
-        transform:
-
-            translateY(-30px)
-
-            translateX(0);
-
+        transform:translate3d(0, -30px, 0);
     }
-
     25%{
-
-        transform:
-
-            translateY(25vh)
-
-            translateX(-18px);
-
+        transform:translate3d(-18px, 25vh, 0);
     }
-
     50%{
-
-        transform:
-
-            translateY(50vh)
-
-            translateX(15px);
-
+        transform:translate3d(15px, 50vh, 0);
     }
-
     75%{
-
-        transform:
-
-            translateY(75vh)
-
-            translateX(-12px);
-
+        transform:translate3d(-12px, 75vh, 0);
     }
-
     100%{
-
-        transform:
-
-            translateY(110vh)
-
-            translateX(20px);
-
+        transform:translate3d(20px, 110vh, 0);
     }
+}
 
+@media (max-width: 768px) {
+    .snow:nth-child(n+26) {
+        display: none !important;
+    }
+    .snow {
+        box-shadow: 0 0 4px rgba(255,255,255,.8);
+        filter: none !important;
+    }
 }

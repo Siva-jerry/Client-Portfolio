@@ -968,18 +968,41 @@ HERO IMAGE
 
 /* Image */
 
-.hero-image-photo{
-
+.hero-image-inner{
+    position:relative;
     width:100%;
-
     height:100%;
-
-    object-fit:cover;
-
     border-radius:28px;
+    overflow:hidden;
+}
 
+.hero-image-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:28px;
     display:block;
+}
 
+.hero-image-photo-placeholder{
+    position:relative;
+    width:100%;
+    height:100%;
+    z-index:1;
+}
+
+.hero-image-photo-actual{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity .45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index:2;
+}
+
+.hero-image-photo-actual.loaded{
+    opacity:1;
 }
 
 /* Glass Reflection */
@@ -1105,51 +1128,38 @@ HERO IMAGE
 }
 
 @media(max-width:768px){
-
     .hero-image-shell{
-
         max-width:320px;
-
     }
-
     .hero-image-frame{
-
         width:280px;
-
         height:380px;
-
         border-radius:28px;
-
     }
-
-    .hero-image-photo{
-
+    .hero-image-inner,
+    .hero-image-photo,
+    .hero-image-photo-placeholder,
+    .hero-image-photo-actual{
         border-radius:22px;
-
     }
-
     .hero-image-ring{
-
         width:310px;
-
         height:310px;
-
     }
-
     .hero-image-ring-two{
-
         display:none;
-
     }
-
     .hero-image-orb{
-
         width:320px;
-
         height:320px;
-
+        filter:blur(40px);
     }
-
+    .hero-floating-star{
+        display:none !important;
+    }
+    .hero-image-shine{
+        display:none !important;
+    }
 }
 
 @media(max-width:500px){
@@ -1174,7 +1184,10 @@ HERO IMAGE
 
     }
 
-    .hero-image-photo{
+    .hero-image-inner,
+    .hero-image-photo,
+    .hero-image-photo-placeholder,
+    .hero-image-photo-actual{
 
         border-radius:18px;
 
