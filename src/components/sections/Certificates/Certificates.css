@@ -82,19 +82,7 @@ RESPONSIVE
 @media (max-width:768px){
 
     .certificate-section{
-        padding:90px 0 60px;
-    }
-
-    .certificate-heading{
-        margin:0 auto 40px;
-    }
-
-    .certificate-title{
-        font-size:clamp(34px, 8vw, 44px);
-    }
-
-    .certificate-description{
-        font-size:15.5px;
+        padding:100px 0;
     }
 
 }
@@ -102,27 +90,7 @@ RESPONSIVE
 @media (max-width:480px){
 
     .certificate-section{
-        padding:75px 0 50px;
-    }
-
-    .certificate-heading{
-        margin:0 auto 30px;
-    }
-
-    .certificate-badge{
-        padding:8px 18px;
-        font-size:.82rem;
-    }
-
-    .certificate-title{
-        font-size:clamp(28px, 8vw, 36px);
-        margin-top:16px;
-    }
-
-    .certificate-description{
-        font-size:14px;
-        line-height:1.65;
-        margin-top:14px;
+        padding:90px 0;
     }
 
 }
@@ -948,33 +916,17 @@ LIGHTBOX MODAL POPUP
 
 @media (max-width: 480px) {
     .certificate-modal-overlay {
-        padding: 14px;
+        padding: 12px;
     }
-
     .certificate-modal-content {
-        padding: 20px 16px;
+        padding: 18px 14px;
         border-radius: 20px;
     }
-
-    .certificate-modal-close {
-        top: 14px;
-        right: 14px;
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
-    }
-
     .certificate-modal-image {
-        max-height: 38vh;
-        margin-top: 24px;
+        max-height: 45vh;
         border-radius: 14px;
     }
-
     .certificate-modal-info h3 {
         font-size: 1.3rem;
     }
-
-    .certificate-modal-info p {
-        font-size: .9rem;
-    }
-}
+}

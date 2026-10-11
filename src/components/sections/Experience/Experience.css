@@ -152,8 +152,8 @@ EXPERIENCE TIMELINE
 .experience-line{
     position:absolute;
     left:50%;
-    top:50;
-    bottom:50;
+    top:50px;
+    bottom:50px;
     width:4px;
     transform:translateX(-50%);
     border-radius:999px;
@@ -165,6 +165,7 @@ EXPERIENCE TIMELINE
     );
     opacity:.35;
 }
+
 
 /*==================================================
 EXPERIENCE CARD

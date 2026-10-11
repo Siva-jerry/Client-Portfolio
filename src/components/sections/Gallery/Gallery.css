@@ -550,7 +550,14 @@ GALLERY CARD
 
     overflow:hidden;
 
+    break-inside:avoid;
+
+    -webkit-column-break-inside:avoid;
+
+    margin-bottom:24px;
+
     border-radius:28px;
+
 
     background:rgba(255,255,255,.45);
 

@@ -250,9 +250,12 @@ TESTIMONIALS SLIDER
 
     scroll-behavior:smooth;
 
+    -webkit-overflow-scrolling:touch;
+
     padding-bottom:12px;
 
 }
+
 
 .testimonials-slider::-webkit-scrollbar{
 

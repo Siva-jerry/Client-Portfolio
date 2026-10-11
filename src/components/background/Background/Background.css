@@ -31,28 +31,4 @@
             #F5F8FF 100%
         );
 
-}
-
-@media (prefers-color-scheme: dark) {
-    .background-wrapper {
-        background:
-            radial-gradient(circle at 20% 15%,
-                rgba(124,58,237,.22),
-                transparent 45%),
-
-            radial-gradient(circle at 80% 10%,
-                rgba(59,130,246,.18),
-                transparent 45%),
-
-            radial-gradient(circle at 50% 50%,
-                rgba(236,72,153,.10),
-                transparent 55%),
-
-            linear-gradient(
-                180deg,
-                #090D16 0%,
-                #0F172A 40%,
-                #090D16 100%
-            ) !important;
-    }
-}
+}
