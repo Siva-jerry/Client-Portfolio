@@ -1,57 +1,307 @@
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
-
+    -webkit-tap-highlight-color:transparent;
 }
 
 html{
-
     scroll-behavior:smooth;
-
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
 }
 
 body{
-
     background:var(--background);
-
     color:var(--text);
-
+    width:100%;
+    max-width:100%;
     overflow-x:hidden;
+    position:relative;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
 
+#root{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
 }
 
 img{
-
     display:block;
-
-    width:100%;
-
+    max-width:100%;
+    height:auto;
 }
 
 a{
-
     text-decoration:none;
-
     color:inherit;
-
 }
 
 button{
-
     border:none;
-
     outline:none;
-
     cursor:pointer;
-
     font:inherit;
-
 }
 
 ul{
-
     list-style:none;
-
 }
+
+/*==================================================
+GLOBAL DARK MODE OVERRIDES FOR CLIENT PORTFOLIO
+==================================================*/
+@media (prefers-color-scheme: dark) {
+    /* 1. Universal Headings & Titles */
+    h1, h2, h3, h4, h5, h6,
+    .hero-left-content h1,
+    .about-title,
+    .skills-title,
+    .projects-title,
+    .project-title,
+    .experience-title,
+    .experience-role,
+    .experience-company,
+    .certificates-title,
+    .certificate-title,
+    .certificate-card-title,
+    .certificate-modal-info h3,
+    .gallery-title,
+    .achievements-title,
+    .achievement-title,
+    .testimonials-title,
+    .testimonial-name,
+    .contact-heading-title,
+    .contact-info-title,
+    .contact-info-value,
+    .contact-info-link,
+    .contact-socials-title,
+    .contact-form-title,
+    .contact-social-name {
+        color: #F8FAFC !important;
+    }
+
+    /* 2. Subtitles, Paragraphs & Descriptions */
+    p,
+    .contact-heading-description,
+    .contact-info-text,
+    .contact-socials-description,
+    .project-description,
+    .about-description,
+    .testimonial-role,
+    .testimonial-feedback,
+    .experience-description,
+    .certificate-organization,
+    .certificate-meta-item span {
+        color: #94A3B8 !important;
+    }
+
+    /* 3. Cards & Glass Surfaces */
+    .project-card,
+    .skill-card,
+    .about-card,
+    .experience-card,
+    .certificate-card,
+    .gallery-card,
+    .achievement-card,
+    .testimonial-card,
+    .contact-form,
+    .hero-stats-wrapper {
+        background: rgba(17, 24, 39, 0.72) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .certificate-modal-content {
+        background: #111827 !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .certificate-modal-image {
+        background: #0B0F17 !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .project-card:hover,
+    .skill-card:hover,
+    .about-card:hover,
+    .experience-card:hover,
+    .certificate-card:hover,
+    .achievement-card:hover,
+    .testimonial-card:hover {
+        background: rgba(24, 33, 54, 0.82) !important;
+        border-color: rgba(124, 58, 237, 0.45) !important;
+    }
+
+    /* 4. Top Navigation Bar */
+    .navbar {
+        background: rgba(17, 24, 39, 0.8) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        box-shadow: 0 10px 45px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .navbar-menu a {
+        color: #CBD5E1 !important;
+    }
+
+    .navbar-menu a:hover {
+        color: #C084FC !important;
+    }
+
+    .navbar-toggle span {
+        background: #FFFFFF !important;
+    }
+
+    .navbar-mobile-drawer {
+        background: rgba(17, 24, 39, 0.95) !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7) !important;
+    }
+
+    .mobile-nav-link {
+        color: #F8FAFC !important;
+    }
+
+    .mobile-nav-link:hover {
+        background: rgba(124, 58, 237, 0.18) !important;
+        color: #C084FC !important;
+    }
+
+    /* 5. Subtitle Pills & Badge Tags */
+    .projects-subtitle,
+    .about-subtitle,
+    .contact-heading-tag,
+    .contact-form-badge,
+    .achievements-subtitle,
+    .skills-subtitle,
+    .certificates-subtitle {
+        background: rgba(30, 41, 59, 0.8) !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        color: #C084FC !important;
+    }
+
+    /* 6. Chips, Icons & Controls */
+    .contact-info-icon,
+    .contact-social-icon,
+    .project-tech-chip,
+    .skill-pill,
+    .hero-social-btn {
+        background: rgba(30, 41, 59, 0.7) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        color: #C084FC !important;
+    }
+
+    /* 7. Contact Form Inputs */
+    .contact-form-group input,
+    .contact-form-group textarea {
+        color: #F8FAFC !important;
+        border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .contact-form-group input:focus,
+    .contact-form-group textarea:focus {
+        border-bottom-color: #A855F7 !important;
+    }
+
+    .contact-form-group input::placeholder,
+    .contact-form-group textarea::placeholder {
+        color: #64748B !important;
+    }
+
+    .contact-info-row,
+    .contact-social-link {
+        border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+    }
+}
+
+/* Fallback / Explicit data-theme="dark" attribute support */
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3,
+[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6,
+[data-theme="dark"] .hero-left-content h1,
+[data-theme="dark"] .about-title,
+[data-theme="dark"] .skills-title,
+[data-theme="dark"] .projects-title,
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .experience-title,
+[data-theme="dark"] .experience-role,
+[data-theme="dark"] .experience-company,
+[data-theme="dark"] .certificates-title,
+[data-theme="dark"] .certificate-title,
+[data-theme="dark"] .certificate-card-title,
+[data-theme="dark"] .certificate-modal-info h3,
+[data-theme="dark"] .gallery-title,
+[data-theme="dark"] .achievements-title,
+[data-theme="dark"] .achievement-title,
+[data-theme="dark"] .testimonials-title,
+[data-theme="dark"] .testimonial-name,
+[data-theme="dark"] .contact-heading-title,
+[data-theme="dark"] .contact-info-title,
+[data-theme="dark"] .contact-info-value,
+[data-theme="dark"] .contact-info-link,
+[data-theme="dark"] .contact-socials-title,
+[data-theme="dark"] .contact-form-title,
+[data-theme="dark"] .contact-social-name {
+    color: #F8FAFC !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .contact-heading-description,
+[data-theme="dark"] .contact-info-text,
+[data-theme="dark"] .contact-socials-description,
+[data-theme="dark"] .project-description,
+[data-theme="dark"] .about-description,
+[data-theme="dark"] .testimonial-role,
+[data-theme="dark"] .testimonial-feedback,
+[data-theme="dark"] .experience-description,
+[data-theme="dark"] .certificate-organization,
+[data-theme="dark"] .certificate-meta-item span {
+    color: #94A3B8 !important;
+}
+
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .about-card,
+[data-theme="dark"] .experience-card,
+[data-theme="dark"] .certificate-card,
+[data-theme="dark"] .gallery-card,
+[data-theme="dark"] .achievement-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .contact-form,
+[data-theme="dark"] .hero-stats-wrapper {
+    background: rgba(17, 24, 39, 0.72) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .certificate-modal-content {
+    background: #111827 !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .certificate-modal-image {
+    background: #0B0F17 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .contact-info-icon,
+[data-theme="dark"] .contact-social-icon {
+    background: rgba(30, 41, 59, 0.7) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #C084FC !important;
+}
+
+[data-theme="dark"] .contact-form-group input,
+[data-theme="dark"] .contact-form-group textarea {
+    color: #F8FAFC !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .contact-form-group input::placeholder,
+[data-theme="dark"] .contact-form-group textarea::placeholder {
+    color: #64748B !important;
+}

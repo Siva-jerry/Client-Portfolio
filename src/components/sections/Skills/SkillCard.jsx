@@ -22,8 +22,11 @@ import {
 export default function SkillCard({ skill }) {
 
     function getSkillIcon(icon) {
+        if (!icon || typeof icon !== "string") {
+            return <FaReact />;
+        }
 
-        switch (icon.toLowerCase()) {
+        switch (icon.toLowerCase().trim()) {
 
             case "react":
                 return <FaReact />;

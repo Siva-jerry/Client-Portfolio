@@ -585,6 +585,12 @@ RESPONSIVE
 
 @media(max-width:768px){
 
+    .achievement-section{
+
+        padding:90px 0 60px;
+
+    }
+
     .achievement-line{
 
         display:none;
@@ -595,7 +601,9 @@ RESPONSIVE
 
         margin-left:0;
 
-        padding:26px;
+        padding:26px 20px;
+
+        border-radius:24px;
 
     }
 
@@ -605,9 +613,15 @@ RESPONSIVE
 
     }
 
+    .achievement-title{
+
+        font-size:clamp(34px, 8vw, 44px);
+
+    }
+
     .achievement-card-title{
 
-        font-size:1.6rem;
+        font-size:1.45rem;
 
     }
 
@@ -615,19 +629,45 @@ RESPONSIVE
 
 @media(max-width:480px){
 
+    .achievement-section{
+
+        padding:75px 0 50px;
+
+    }
+
+    .achievement-title{
+
+        font-size:clamp(28px, 8vw, 36px);
+
+    }
+
     .achievement-card{
 
-        padding:22px;
+        padding:18px 15px;
 
-        border-radius:24px;
+        border-radius:20px;
+
+    }
+
+    .achievement-card-title{
+
+        font-size:1.3rem;
+
+    }
+
+    .achievement-text{
+
+        font-size:14px;
+
+        line-height:1.65;
 
     }
 
     .achievement-image-wrapper{
 
-        width:95px;
+        width:90px;
 
-        height:95px;
+        height:90px;
 
     }
 
@@ -641,9 +681,13 @@ RESPONSIVE
 
     .achievement-featured{
 
-        top:16px;
+        top:12px;
 
-        right:16px;
+        right:12px;
+
+        padding:6px 12px;
+
+        font-size:.72rem;
 
     }
 

@@ -1,8 +1,6 @@
 import {
     collection,
     getDocs,
-    query,
-    orderBy,
 } from "firebase/firestore";
 
 import { db } from "../firebase/firebase";
@@ -10,51 +8,26 @@ import { db } from "../firebase/firebase";
 const EXPERIENCE_COLLECTION = "experience";
 
 export async function getExperienceData() {
-
     try {
-
-        const experienceQuery = query(
-
-            collection(db, EXPERIENCE_COLLECTION),
-
-            orderBy("order", "asc")
-
+        const snapshot = await getDocs(
+            collection(db, EXPERIENCE_COLLECTION)
         );
 
-        const experienceSnapshot = await getDocs(
+        const experience = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }));
 
-            experienceQuery
-
-        );
-
-        const experience = experienceSnapshot.docs.map(
-
-            (doc) => ({
-
-                id: doc.id,
-
-                ...doc.data(),
-
-            })
-
-        );
+        experience.sort((a, b) => {
+            const orderA = typeof a.order === "number" ? a.order : (parseInt(a.order, 10) || 0);
+            const orderB = typeof b.order === "number" ? b.order : (parseInt(b.order, 10) || 0);
+            return orderA - orderB;
+        });
 
         return experience;
-
     }
-
     catch (error) {
-
-        console.error(
-
-            "Error loading Experience :",
-
-            error
-
-        );
-
-        throw error;
-
+        console.error("Error loading Experience :", error);
+        return [];
     }
-
 }

@@ -1,33 +1,27 @@
 import {
   collection,
   getDocs,
-  orderBy,
-  query,
 } from "firebase/firestore";
 
 import { db } from "../firebase/firebase";
 
-/*
-======================================================
-GET ALL PROJECTS
-======================================================
-*/
+const PROJECTS_COLLECTION = "projects";
 
 export async function getProjectsData() {
   try {
-    const projectsRef = collection(db, "projects");
-
-    const projectsQuery = query(
-      projectsRef,
-      orderBy("order", "asc")
-    );
-
-    const snapshot = await getDocs(projectsQuery);
+    const projectsRef = collection(db, PROJECTS_COLLECTION);
+    const snapshot = await getDocs(projectsRef);
 
     const projects = snapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
+
+    projects.sort((a, b) => {
+      const orderA = typeof a.order === "number" ? a.order : (parseInt(a.order, 10) || 0);
+      const orderB = typeof b.order === "number" ? b.order : (parseInt(b.order, 10) || 0);
+      return orderA - orderB;
+    });
 
     return projects;
   } catch (error) {

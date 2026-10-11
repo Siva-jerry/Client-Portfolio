@@ -1,8 +1,6 @@
 import {
   collection,
   getDocs,
-  orderBy,
-  query,
 } from "firebase/firestore";
 
 import { db } from "../firebase/firebase";
@@ -11,38 +9,24 @@ const SKILLS_COLLECTION = "skills";
 
 export async function getSkillsData() {
   try {
+    const skillsRef = collection(db, SKILLS_COLLECTION);
+    const snapshot = await getDocs(skillsRef);
 
-    const skillsRef = collection(
-      db,
-      SKILLS_COLLECTION
-    );
+    const skills = snapshot.docs.map((document) => ({
+      id: document.id,
+      ...document.data(),
+    }));
 
-    const skillsQuery = query(
-      skillsRef,
-      orderBy("order", "asc")
-    );
-
-    const snapshot = await getDocs(
-      skillsQuery
-    );
-
-    const skills = snapshot.docs.map(
-      (document) => ({
-        id: document.id,
-        ...document.data(),
-      })
-    );
+    // Resilient client-side sort
+    skills.sort((a, b) => {
+      const orderA = typeof a.order === "number" ? a.order : (parseInt(a.order, 10) || 0);
+      const orderB = typeof b.order === "number" ? b.order : (parseInt(b.order, 10) || 0);
+      return orderA - orderB;
+    });
 
     return skills;
-
   } catch (error) {
-
-    console.error(
-      "Error loading Skills :",
-      error
-    );
-
-    throw error;
-
+    console.error("Error loading Skills :", error);
+    return [];
   }
 }

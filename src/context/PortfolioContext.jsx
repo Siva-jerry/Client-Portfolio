@@ -41,122 +41,65 @@ export function PortfolioProvider({ children }) {
     try {
       setLoading(true);
 
-      const heroData = await getHeroData();
-      console.log("Hero Data =", heroData);
+      const [
+        heroResult,
+        aboutResult,
+        skillsResult,
+        projectsResult,
+        experienceResult,
+        certificatesResult,
+        galleryResult,
+        achievementsResult,
+        testimonialsResult,
+        contactResult,
+        footerResult,
+      ] = await Promise.allSettled([
+        getHeroData(),
+        getAboutData(),
+        getSkillsData(),
+        getProjectsData(),
+        getExperienceData(),
+        getCertificatesData(),
+        getGalleryData(),
+        getAchievementsData(),
+        getTestimonialsData(),
+        getContactData(),
+        getFooterData(),
+      ]);
 
-      setHero(heroData);
-
-
-      const aboutData = await getAboutData();
-
-console.log("About Data =", aboutData);
-
-setAbout(aboutData);
-
-const skillsData = await getSkillsData();
-
-console.log("Skills Data =", skillsData);
-
-setSkills(skillsData);
-
-
-const projectsData = await getProjectsData();
-
-console.log("Projects Data =", projectsData);
-
-setProjects(projectsData);
-
-
-const experienceData = await getExperienceData();
-
-console.log("Experience Data =", experienceData);
-
-setExperience(experienceData);
-
-const certificatesData = await getCertificatesData();
-
-console.log("Certificates Data =", certificatesData);
-
-setCertificates(certificatesData);
-
-
-const galleryData = await getGalleryData();
-
-console.log("Gallery Data =", galleryData);
-
-setGallery(galleryData);
-
-const achievementsData = await getAchievementsData();
-
-console.log(
-
-    "Achievements Data =",
-
-    achievementsData
-
-);
-
-setAchievements(
-
-    achievementsData
-
-);
-
-
-const testimonialsData = await getTestimonialsData();
-
-console.log(
-
-    "Testimonials Data =",
-
-    testimonialsData
-
-);
-
-setTestimonials(
-
-    testimonialsData
-
-);
-
-const contactData = await getContactData();
-
-console.log(
-
-    "Contact Data =",
-
-    contactData
-
-);
-
-setContact(
-
-    contactData
-
-);
-
-
-const footerData = await getFooterData();
-
-console.log(
-
-    "Footer Data =",
-
-    footerData
-
-);
-
-setFooter(
-
-    footerData
-
-);
-
-      // Future
-      // setAbout(await getAboutData());
-      // setSkills(await getSkillsData());
-      // setProjects(await getProjectsData());
-
+      if (heroResult.status === "fulfilled" && heroResult.value) {
+        setHero(heroResult.value);
+      }
+      if (aboutResult.status === "fulfilled" && aboutResult.value) {
+        setAbout(aboutResult.value);
+      }
+      if (skillsResult.status === "fulfilled" && skillsResult.value) {
+        setSkills(skillsResult.value);
+      }
+      if (projectsResult.status === "fulfilled" && projectsResult.value) {
+        setProjects(projectsResult.value);
+      }
+      if (experienceResult.status === "fulfilled" && experienceResult.value) {
+        setExperience(experienceResult.value);
+      }
+      if (certificatesResult.status === "fulfilled" && certificatesResult.value) {
+        setCertificates(certificatesResult.value);
+      }
+      if (galleryResult.status === "fulfilled" && galleryResult.value) {
+        setGallery(galleryResult.value);
+      }
+      if (achievementsResult.status === "fulfilled" && achievementsResult.value) {
+        setAchievements(achievementsResult.value);
+      }
+      if (testimonialsResult.status === "fulfilled" && testimonialsResult.value) {
+        setTestimonials(testimonialsResult.value);
+      }
+      if (contactResult.status === "fulfilled" && contactResult.value) {
+        setContact(contactResult.value);
+      }
+      if (footerResult.status === "fulfilled" && footerResult.value) {
+        setFooter(footerResult.value);
+      }
     } catch (error) {
       console.error("Portfolio Load Error :", error);
     } finally {

@@ -755,19 +755,19 @@ RESPONSIVE
 
     .certificate-card{
 
-        padding:24px;
+        padding:22px 18px;
 
     }
 
     .certificate-image-wrapper{
 
-        height:200px;
+        height:190px;
 
     }
 
     .certificate-card-title{
 
-        font-size:1.35rem;
+        font-size:1.3rem;
 
     }
 
@@ -777,15 +777,31 @@ RESPONSIVE
 
     .certificate-card{
 
-        border-radius:24px;
+        border-radius:20px;
+
+        padding:18px 15px;
 
     }
 
     .certificate-image-wrapper{
 
-        height:180px;
+        height:165px;
 
-        padding:16px;
+        padding:12px;
+
+        border-radius:16px;
+
+    }
+
+    .certificate-card-title{
+
+        font-size:1.15rem;
+
+    }
+
+    .certificate-card-issuer{
+
+        font-size:.88rem;
 
     }
 

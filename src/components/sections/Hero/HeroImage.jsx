@@ -3,15 +3,16 @@ import placeholderImage from "../../../assets/images/hero/profile.png";
 import { HiSparkles } from "react-icons/hi2";
 
 import { usePortfolio } from "../../../context/PortfolioContext";
+import { getSupabaseImageUrl } from "../../../supabase/supabase";
 
 export default function HeroImage() {
 
     const { hero } = usePortfolio();
 
-    const imageSource =
-        hero?.imageUrl && hero.imageUrl.trim() !== ""
-            ? hero.imageUrl
-            : placeholderImage;
+    const rawUrl = hero?.imageUrl || hero?.imagePath;
+    const imageSource = rawUrl && rawUrl.trim() !== ""
+        ? getSupabaseImageUrl(rawUrl)
+        : placeholderImage;
 
     return (
 

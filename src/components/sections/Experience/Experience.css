@@ -433,44 +433,76 @@ RESPONSIVE DISPATCHES
 
 @media(max-width:768px){
     .experience-section{
-        padding:100px 0;
+        padding:90px 0 60px;
+    }
+    .experience-line{
+        display:none;
     }
     .experience-heading{
-        margin-bottom:50px;
+        margin-bottom:40px;
     }
     .experience-title{
-        font-size:2.5rem;
+        font-size:clamp(34px, 8vw, 44px);
     }
     .experience-description{
-        font-size:16px;
+        font-size:15.5px;
     }
     .experience-filter{
-        gap:12px;
-        margin:45px 0;
+        gap:10px;
+        margin:35px 0;
     }
     .experience-filter-btn{
         flex:1;
-        min-width:120px;
-        padding:12px 18px;
-        font-size:.9rem;
+        min-width:110px;
+        padding:11px 16px;
+        font-size:.85rem;
     }
     .experience-timeline{
-        gap:28px;
+        gap:24px;
+    }
+    .experience-card{
+        padding:28px 22px;
     }
 }
 
 @media(max-width:480px){
+    .experience-section{
+        padding:75px 0 50px;
+    }
+    .experience-title{
+        font-size:clamp(28px, 8vw, 36px);
+    }
     .experience-card{
-        padding:24px;
-        border-radius:24px;
+        padding:20px 16px;
+        border-radius:20px;
     }
     .experience-role{
-        font-size:1.65rem;
+        font-size:1.35rem;
+    }
+    .experience-company{
+        font-size:1rem;
+    }
+    .experience-meta{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:8px;
+        font-size:13px;
+    }
+    .experience-description{
+        font-size:14px;
+        line-height:1.65;
+    }
+    .experience-tech-tag{
+        font-size:12px;
+        padding:6px 12px;
     }
     .experience-filter{
-        flex-direction:column;
+        flex-wrap:wrap;
+        gap:8px;
     }
     .experience-filter-btn{
-        width:100%;
+        min-width:85px;
+        padding:9px 14px;
+        font-size:.8rem;
     }
 }

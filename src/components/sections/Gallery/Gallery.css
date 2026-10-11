@@ -418,7 +418,21 @@ RESPONSIVE
 
     .gallery-filter-container{
 
-        justify-content:flex-start;
+        justify-content:center;
+
+        gap:8px;
+
+        padding:8px;
+
+    }
+
+    .gallery-filter-button{
+
+        min-width:80px;
+
+        padding:10px 14px;
+
+        font-size:.8rem;
 
     }
 
