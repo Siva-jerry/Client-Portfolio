@@ -370,7 +370,11 @@ MOBILE DRAWER MENU
 
     flex-direction:column;
 
-    gap:18px;
+    max-height:calc(100vh - 95px);
+
+    overflow-y:auto;
+
+    -webkit-overflow-scrolling:touch;
 
     box-shadow:
 
@@ -389,6 +393,20 @@ MOBILE DRAWER MENU
     pointer-events:none;
 
     z-index:1000;
+
+}
+
+.navbar-mobile-drawer::-webkit-scrollbar{
+
+    width:4px;
+
+}
+
+.navbar-mobile-drawer::-webkit-scrollbar-thumb{
+
+    background:rgba(124,58,237,.25);
+
+    border-radius:10px;
 
 }
 
